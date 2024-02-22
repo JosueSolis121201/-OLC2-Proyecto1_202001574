@@ -1,0 +1,173 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    AND
+    BOOLEAN
+    BREAK
+    CASE
+    CHAR
+    COMMENTBLOCK
+    CONST
+    CONTINUE
+    CORDER
+    CORIZQ
+    DECIMAL
+    DEFAULT
+    DESCRE
+    DESIGUALDAD
+    ELSE
+    FALSE
+    FLOAT
+    FOR
+    FUNCTION
+    ID
+    IF
+    IGUALDAD
+    INCRE
+    INDEXOF
+    INTERFACE
+    JOIN
+    KEYS
+    LENGTH
+    LLAVDER
+    LLAVIZQ
+    MAYOR
+    MAYORIGUAL
+    MENOR
+    MENORIGUAL
+    MODULO
+    NOT
+    NUMBER
+    OBJECT
+    OR
+    PARSEFLOAT
+    PARSEINT
+    POP
+    PUSH
+    RETURN
+    STRING
+    SWITCH
+    TERNARIO
+    TOLOWERCASE
+    TOSTRING
+    TRUE
+    TYPEOF
+    VALUES
+    VAR
+    WHILE
+
+Grammar
+
+Rule 0     S' -> instrucciones
+Rule 1     instrucciones -> TOUPPERCASE
+Rule 2     instruccion -> CONSOLE PUNTO LOG PARIZQ expresion PARDER PUNTOCOMA
+Rule 3     expresion -> expresion MAS expresion
+Rule 4     expresion -> expresion MENOS expresion
+Rule 5     expresion -> expresion POR expresion
+Rule 6     expresion -> expresion DIVIDIDO expresion
+Rule 7     expresion -> MENOS expresion
+Rule 8     expresion -> PARIZQ expresion PARDER
+Rule 9     expresion -> ENTERO
+Rule 10    expresion -> CADENA
+
+Terminals, with rules where they appear
+
+AND                  : 
+BOOLEAN              : 
+BREAK                : 
+CADENA               : 10
+CASE                 : 
+CHAR                 : 
+COMMENTBLOCK         : 
+CONSOLE              : 2
+CONST                : 
+CONTINUE             : 
+CORDER               : 
+CORIZQ               : 
+DECIMAL              : 
+DEFAULT              : 
+DESCRE               : 
+DESIGUALDAD          : 
+DIVIDIDO             : 6
+ELSE                 : 
+ENTERO               : 9
+FALSE                : 
+FLOAT                : 
+FOR                  : 
+FUNCTION             : 
+ID                   : 
+IF                   : 
+IGUALDAD             : 
+INCRE                : 
+INDEXOF              : 
+INTERFACE            : 
+JOIN                 : 
+KEYS                 : 
+LENGTH               : 
+LLAVDER              : 
+LLAVIZQ              : 
+LOG                  : 2
+MAS                  : 3
+MAYOR                : 
+MAYORIGUAL           : 
+MENOR                : 
+MENORIGUAL           : 
+MENOS                : 4 7
+MODULO               : 
+NOT                  : 
+NUMBER               : 
+OBJECT               : 
+OR                   : 
+PARDER               : 2 8
+PARIZQ               : 2 8
+PARSEFLOAT           : 
+PARSEINT             : 
+POP                  : 
+POR                  : 5
+PUNTO                : 2
+PUNTOCOMA            : 2
+PUSH                 : 
+RETURN               : 
+STRING               : 
+SWITCH               : 
+TERNARIO             : 
+TOLOWERCASE          : 
+TOSTRING             : 
+TOUPPERCASE          : 1
+TRUE                 : 
+TYPEOF               : 
+VALUES               : 
+VAR                  : 
+WHILE                : 
+error                : 
+
+Nonterminals, with rules where they appear
+
+expresion            : 2 3 3 4 4 5 5 6 6 7 8
+instruccion          : 
+instrucciones        : 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . instrucciones
+    (1) instrucciones -> . TOUPPERCASE
+
+    TOUPPERCASE     shift and go to state 2
+
+    instrucciones                  shift and go to state 1
+
+state 1
+
+    (0) S' -> instrucciones .
+
+
+
+state 2
+
+    (1) instrucciones -> TOUPPERCASE .
+
+    $end            reduce using rule 1 (instrucciones -> TOUPPERCASE .)
+

@@ -1,0 +1,27 @@
+
+def p_instruccion_console(t):
+    '''instruccion : CONSOLE PUNTO LOG PARIZQ expresion PARDER PUNTOCOMA'''
+    print(t[5])
+
+def p_expresion_binaria(t):
+    '''expresion : expresion MAS expresion
+                  | expresion MENOS expresion
+                  | expresion POR expresion
+                  | expresion DIVIDIDO expresion'''
+    if t[2] == '+'  : t[0] = t[1] + t[3]
+    elif t[2] == '-': t[0] = t[1] - t[3]
+    elif t[2] == '*': t[0] = t[1] * t[3]
+    elif t[2] == '/': t[0] = t[1] / t[3]
+
+def p_expresion_unaria(t):
+    'expresion : MENOS expresion %prec UMENOS'
+    t[0] = -t[2]
+
+def p_expresion_agrupacion(t):
+    'expresion : PARIZQ expresion PARDER'
+    t[0] = t[2]
+
+def p_expresion_number(t):
+    '''expresion    : ENTERO
+                    | CADENA'''
+    t[0] = t[1]
